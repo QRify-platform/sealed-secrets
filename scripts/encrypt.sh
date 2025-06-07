@@ -12,7 +12,7 @@ for PAIR in "$@"; do
   ARGS="$ARGS --from-literal=${PAIR}"
 done
 
-kubectl create secret generic "$SECRET_NAME" $ARGS --dry-run=client -o json |
+kubectl create secret generic "$SECRET_NAME" --namespace="$ENV" $ARGS --dry-run=client -o json |
   kubeseal --cert=pub-cert.pem --format=yaml > "secrets/${ENV}/${SECRET_NAME}.yaml"
 
 echo "🔐 Encrypted secret saved to secrets/${ENV}/${SECRET_NAME}.yaml"
