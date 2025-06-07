@@ -23,6 +23,7 @@ jobs:
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_KEY }}
+          AWS_REGION: us-east-2
 
       - name: Apply all Sealed Secrets
         run: |
@@ -30,3 +31,7 @@ jobs:
             echo "📁 Applying secrets in $ENV_DIR"
             kubectl apply -f "$ENV_DIR"
           done
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_KEY }}
+          AWS_REGION: us-east-2
