@@ -7,6 +7,12 @@ ENV=$1
 SECRET_NAME=$2
 shift 2
 
+# Ensure namespace exists
+if ! kubectl get namespace "$ENV" >/dev/null 2>&1; then
+  echo "🔧 Namespace '$ENV' not found. Creating it..."
+  kubectl create namespace "$ENV"
+fi
+
 ARGS=""
 for PAIR in "$@"; do
   ARGS="$ARGS --from-literal=${PAIR}"
