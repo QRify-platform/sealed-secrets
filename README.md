@@ -2,7 +2,7 @@
 
 This repo manages **encrypted Kubernetes secrets** for all environments (`dev`, `prod`, etc.) using [Bitnami Sealed Secrets](https://github.com/bitnami-labs/sealed-secrets).
 
-Secrets are committed in encrypted form and automatically deployed to the cluster via ArgoCD.
+Secrets are committed in encrypted form and automatically deployed to the cluster via **ArgoCD**.
 
 ---
 
