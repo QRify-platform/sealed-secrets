@@ -2,7 +2,7 @@
 
 This repo manages **encrypted Kubernetes secrets** for all environments (`dev`, `prod`, etc.) using [Bitnami Sealed Secrets](https://github.com/bitnami-labs/sealed-secrets).
 
-Secrets are committed in encrypted form and automatically deployed to the cluster via GitHub Actions.
+Secrets are committed in encrypted form and automatically deployed to the cluster via ArgoCD.
 
 ---
 
@@ -85,7 +85,7 @@ Example:
 
 4. Commit the generated file under `secrets/dev/aws-creds.yaml`
 
-5. Push to `main` — GitHub Actions will auto-deploy it.
+5. Push to `main` — Secrets will be auto-deployed by ArgoCD app.
 
 ---
 
