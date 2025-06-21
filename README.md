@@ -67,7 +67,7 @@ choco install kubeseal
 2. Download the **public cert** used by the controller:
 
 ```bash
-kubeseal --controller-namespace kube-system --controller-name sealed-secrets --fetch-cert > pub-cert.pem
+kubeseal --controller-namespace sealed-secrets --controller-name sealed-secrets --fetch-cert > pub-cert.pem
 
 ```
 
