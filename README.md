@@ -29,11 +29,7 @@ sealed-secrets/
 
 ## 🚀 Automatic Deployment
 
-On every `push` to `main` that modifies anything under the `secrets/` folder, GitHub Actions will:
-
-1. Set up access to your Kubernetes cluster (EKS)
-2. Loop through all folders under `secrets/`
-3. Apply every Sealed Secret found via `kubectl apply`
+On every `push` to `main` that modifies anything under the `secrets/` folder, The secrets are deployed to the cluster using ArgoCD, which is constantily watching the repo for any changed 
 
 ---
 
